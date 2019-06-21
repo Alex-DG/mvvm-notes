@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import com.alexdg.notes.R
 import com.alexdg.notes.foundations.BaseRecyclerAdapter
 import com.alexdg.notes.models.Task
+import com.alexdg.notes.views.TodoView
 import kotlinx.android.synthetic.main.item_task.view.*
-import kotlinx.android.synthetic.main.view_todo.view.*
 
 class TaskAdapter(
     taskList: MutableList<Task> = mutableListOf()
@@ -19,14 +19,20 @@ class TaskAdapter(
     }
 
     class ViewHolder(view: View) : BaseViewHolder<Task>(view) {
+
         override fun onBind(data: Task) {
             view.titleView.text = data.title
 
             data.todos!!.forEach { todo ->
-                val todoView = LayoutInflater.from(view.context).inflate(R.layout.view_todo, view.todoContainer, false).apply {
-                    descriptionView.text = todo.description
-                    completeCheckBox.isChecked = todo.isComplete
-                }
+                val todoView =
+                    (LayoutInflater.from(view.context).inflate(
+                        R.layout.view_todo,
+                        view.todoContainer,
+                        false
+                    ) as TodoView).apply {
+
+                        initView(todo)
+                    }
 
                 view.todoContainer.addView(todoView)
 

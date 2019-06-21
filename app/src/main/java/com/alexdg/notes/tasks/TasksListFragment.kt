@@ -31,13 +31,17 @@ class TasksListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView.layoutManager = LinearLayoutManager(context)
-        val adapter = TaskAdapter(mutableListOf(
-            Task("Testing One!", mutableListOf(
-                Todo("Test one"),
-                Todo("Test two", true)
-            )),
-            Task("Testing Two!")
-        ))
+        val adapter = TaskAdapter(
+            mutableListOf(
+                Task(
+                    "Testing One!", mutableListOf(
+                        Todo("Test one", true),
+                        Todo("Test two")
+                    )
+                ),
+                Task("Testing Two!")
+            )
+        )
 
         recyclerView.adapter = adapter
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             android:orientation="vertical"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content">
+<com.alexdg.notes.views.TodoView xmlns:tools="http://schemas.android.com/tools"
+                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                 xmlns:android="http://schemas.android.com/apk/res/android"
+                                 android:orientation="vertical"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content">
 
     <CheckBox
             android:id="@+id/completeCheckBox"
@@ -17,9 +17,9 @@
             android:layout_marginTop="@dimen/item_margin_default"/>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/descriptionView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/completeCheckBox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/completeCheckBox"
@@ -29,4 +29,4 @@
             android:layout_marginEnd="@dimen/item_margin_default"
             tools:text="Hello world!"
             />
-</android.support.constraint.ConstraintLayout>
+</com.alexdg.notes.views.TodoView>
