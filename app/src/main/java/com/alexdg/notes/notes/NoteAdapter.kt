@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.alexdg.notes.R
 import com.alexdg.notes.foundations.BaseRecyclerAdapter
 import com.alexdg.notes.models.Note
-import kotlinx.android.synthetic.main.item_task.view.*
+import com.alexdg.notes.views.NoteView
 
 class NoteAdapter(
     noteList: MutableList<Note> = mutableListOf()
@@ -19,7 +19,7 @@ class NoteAdapter(
 
     class ViewHolder(view: View) : BaseViewHolder<Note>(view) {
         override fun onBind(data: Note) {
-            view.titleView.text = data.description
+            (view as NoteView).initView(data)
         }
     }
 }
