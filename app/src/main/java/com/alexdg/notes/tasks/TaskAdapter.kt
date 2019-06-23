@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import com.alexdg.notes.R
 import com.alexdg.notes.foundations.BaseRecyclerAdapter
 import com.alexdg.notes.models.Task
-import com.alexdg.notes.views.TodoView
-import kotlinx.android.synthetic.main.item_task.view.*
+import com.alexdg.notes.views.TaskView
 
 class TaskAdapter(
     taskList: MutableList<Task> = mutableListOf()
@@ -20,23 +19,8 @@ class TaskAdapter(
 
     class ViewHolder(view: View) : BaseViewHolder<Task>(view) {
 
-        override fun onBind(data: Task) {
-            view.titleView.text = data.title
-
-            data.todos!!.forEach { todo ->
-                val todoView =
-                    (LayoutInflater.from(view.context).inflate(
-                        R.layout.view_todo,
-                        view.todoContainer,
-                        false
-                    ) as TodoView).apply {
-
-                        initView(todo)
-                    }
-
-                view.todoContainer.addView(todoView)
-
-            }
+        override fun onBind(task: Task) {
+            (view as TaskView).initView(task)
         }
     }
 }
