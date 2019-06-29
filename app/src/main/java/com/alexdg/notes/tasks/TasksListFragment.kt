@@ -1,6 +1,7 @@
 package com.alexdg.notes.tasks
 
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -15,8 +16,15 @@ import kotlinx.android.synthetic.main.fragment_tasks_list.*
 
 class TasksListFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    lateinit var touchActionDelegate: TouchActionDelegate
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        context?.let {
+            if (it is TouchActionDelegate) {
+                touchActionDelegate = it
+            }
+        }
     }
 
     override fun onCreateView(
@@ -42,6 +50,7 @@ class TasksListFragment : Fragment() {
                 ),
                 Task("Testing Two!")
             )
+            , touchActionDelegate
         )
 
         recyclerView.adapter = adapter
@@ -52,6 +61,10 @@ class TasksListFragment : Fragment() {
 
         fun newInstance(): TasksListFragment = TasksListFragment()
 
+    }
+
+    interface TouchActionDelegate {
+        fun onAddButtonClicked(value: String)
     }
 
 }

@@ -1,5 +1,6 @@
 package com.alexdg.notes.notes
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -9,9 +10,21 @@ import android.view.ViewGroup
 import com.alexdg.notes.R
 import com.alexdg.notes.models.Note
 import com.alexdg.notes.tasks.NoteAdapter
+import com.alexdg.notes.tasks.TasksListFragment
 import kotlinx.android.synthetic.main.fragment_notes_list.*
 
 class NotesListFragment : Fragment() {
+
+    lateinit var touchActionDelegate: TouchActionDelegate
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        context?.let {
+            if (it is TouchActionDelegate) {
+                touchActionDelegate = it
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +42,7 @@ class NotesListFragment : Fragment() {
             mutableListOf(
                 Note("Note 1"),
                 Note("Note 2")
-            )
+            ), touchActionDelegate
         )
 
         recyclerView.adapter = adapter
@@ -37,9 +50,11 @@ class NotesListFragment : Fragment() {
     }
 
     companion object {
-
         fun newInstance(): NotesListFragment = NotesListFragment()
+    }
 
+    interface TouchActionDelegate {
+        fun onAddButtonClicked(value: String)
     }
 
 }
