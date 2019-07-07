@@ -1,8 +1,8 @@
 package com.alexdg.notes.views
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.alexdg.notes.models.Note
 import kotlinx.android.synthetic.main.item_note.view.*
 

@@ -2,15 +2,14 @@ package com.alexdg.notes.notes
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.alexdg.notes.R
 import com.alexdg.notes.models.Note
 import com.alexdg.notes.tasks.NoteAdapter
-import com.alexdg.notes.tasks.TasksListFragment
 import kotlinx.android.synthetic.main.fragment_notes_list.*
 
 class NotesListFragment : Fragment() {

@@ -2,8 +2,8 @@ package com.alexdg.notes.views
 
 import android.content.Context
 import android.graphics.Paint
-import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.alexdg.notes.models.Todo
 import kotlinx.android.synthetic.main.view_todo.view.*
 

@@ -1,7 +1,7 @@
 package com.alexdg.notes.create
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.alexdg.notes.R
 import com.alexdg.notes.navigation.NavigationActivity
 import kotlinx.android.synthetic.main.activity_create.*

@@ -1,9 +1,9 @@
 package com.alexdg.notes.tasks
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.alexdg.notes.R
 import com.alexdg.notes.foundations.BaseRecyclerAdapter
 import com.alexdg.notes.models.Note

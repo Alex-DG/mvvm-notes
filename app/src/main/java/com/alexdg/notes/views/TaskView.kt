@@ -2,9 +2,9 @@ package com.alexdg.notes.views
 
 import android.content.Context
 import android.graphics.Paint
-import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.alexdg.notes.R
 import com.alexdg.notes.models.Task
 import kotlinx.android.synthetic.main.item_task.view.*
